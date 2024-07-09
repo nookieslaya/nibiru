@@ -18,6 +18,7 @@ class NIBIRU_THEME
     {
 //        load classes
         Assets::get_instance();
+        Menus::get_instance();
         $this->setup_hooks();
     }
 
@@ -33,7 +34,6 @@ class NIBIRU_THEME
     public function setup_theme()
     {
         add_theme_support('title-tag');
-        add_theme_support('post-thumbnail');
         add_theme_support('custom-logo', [
             'header-text' => ['site-title', 'site-description'],
             'height' => 100,
@@ -46,6 +46,26 @@ class NIBIRU_THEME
             'default-image' => "",
             'default-repeat' => "no-repeat",
         ]);
+        add_theme_support('post-thumbnail');
+        add_theme_support('customize-selective-refresh-widgets');
+        add_theme_support('automatic-feed-links');
+        add_theme_support('html5',
+            [
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+//            'script',
+            'style',
+        ]);
+        add_theme_support('wp-blog-style');
+        add_theme_support('align-wide'); //support align images in editor
+
+        global  $content_width;
+        if(!isset($content_width)){
+            $content_width = 1240;
+        }
     }
 
 }
