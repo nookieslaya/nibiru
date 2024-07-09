@@ -5,7 +5,7 @@
 
 
 
-namespace Nibiru_Theme\Inc\Traits;
+namespace NIBIRU_THEME\Inc\Traits;
 
 trait Singelton {
     public  function __construct(){
